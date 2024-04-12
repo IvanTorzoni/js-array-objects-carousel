@@ -38,7 +38,7 @@ images.forEach((curImage) => {
 
   // Stampa in HTML
   imageSlider.innerHTML += `
-  <div class="my-carousel-item active" carousel-item="1">  //classe active momentaneamente inserita per visualizzazione in pagine. Verrà rimossa alla gestione dei pulsanti
+  <div class="my-carousel-item" carousel-item="1">  
   <img
     class="img-fluid"
     src="${curImage.image}"
@@ -53,3 +53,13 @@ images.forEach((curImage) => {
 </div>
   `
 })
+
+// Seleziono le immagini (da gestire la classe active per la visualizzazione)
+const carouselItem = document.querySelectorAll(".my-carousel-item");
+console.log(carouselItem);
+
+// Creo l'index che mi servirà per indicare quale immagine è visibile
+let activeImgIndex = 0;
+
+// Assegno la classe alla prima immagine
+carouselItem[activeImgIndex].classList.add("active");
