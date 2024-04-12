@@ -66,8 +66,24 @@ carouselItem[activeImgIndex].classList.add("active");
 
 // Creo la funzione per andare avanti
 // Cerco il pulsante nel file HTML e gli assegno l'evento al click
-const fwdBtn = document.querySelector(".my-next-hook")
-console.log(fwdBtn);
+const fwdBtn = document.querySelector(".my-next-hook").addEventListener("click", () => {
+  // Rimuovo la classe dalla immagine corrente 
+  carouselItem[activeImgIndex].classList.remove("active");
+
+  // Se l'indice dell'immagine è minore della lungezza dell'array
+  if (activeImgIndex < images.length - 1) {
+    // incremento l'indice
+    activeImgIndex++;
+    // altrimenti 
+  } else {
+    //riporto l'indice a zero
+    activeImgIndex = 0
+  }
+  // assegno la classe active all'immagine tramite indice che incrementa
+  carouselItem[activeImgIndex].classList.add("active");
+
+})
+// console.log(fwdBtn);
 
 // Creo la funzione per andare indietro
 // Cerco il pulsante nel file HTML e gli assegno l'evento al click
