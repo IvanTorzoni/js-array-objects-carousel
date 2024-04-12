@@ -63,3 +63,13 @@ let activeImgIndex = 0;
 
 // Assegno la classe alla prima immagine
 carouselItem[activeImgIndex].classList.add("active");
+
+// Creo la funzione per andare avanti
+// Cerco il pulsante nel file HTML e gli assegno l'evento al click
+const fwdBtn = document.querySelector(".my-next-hook")
+console.log(fwdBtn);
+
+// Creo la funzione per andare indietro
+// Cerco il pulsante nel file HTML e gli assegno l'evento al click
+const bwdBtn = document.querySelector(".my-prev-hook")
+console.log(bwdBtn);
