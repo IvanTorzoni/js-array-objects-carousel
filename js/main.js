@@ -25,3 +25,31 @@ const images = [
     text: "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
   },
 ];
+
+// Cerco il div che contiene le immagini a HTML
+const imageSlider = document.querySelector(".my-carousel-images")
+// Log alla console
+console.log(imageSlider);
+
+// Eseguo un ciclo che, per ogni object dell'array mi prende i singoli elementi all' interno degli object e me li stampa in HTML
+images.forEach((curImage) => {
+  // log alla console per visualizzare gli elementi
+  console.log(curImage);
+
+  // Stampa in HTML
+  imageSlider.innerHTML += `
+  <div class="my-carousel-item active" carousel-item="1">  //classe active momentaneamente inserita per visualizzazione in pagine. Verrà rimossa alla gestione dei pulsanti
+  <img
+    class="img-fluid"
+    src="${curImage.image}"
+    alt="${curImage.title} picture"
+  />
+  <div class="item-description px-3">
+    <h2>${curImage.title}</h2>
+    <p>
+      ${curImage.text}
+    </p>
+  </div>
+</div>
+  `
+})
