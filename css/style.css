@@ -111,4 +111,7 @@ div#my-carousel .my-thumbnails .my-thumbnail.active{
     border: 3px rgb(197, 197, 197) solid;
 }
 
-
+img {
+    object-fit: cover;
+    max-width: 100%;
+}
