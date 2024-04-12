@@ -87,5 +87,21 @@ const fwdBtn = document.querySelector(".my-next-hook").addEventListener("click",
 
 // Creo la funzione per andare indietro
 // Cerco il pulsante nel file HTML e gli assegno l'evento al click
-const bwdBtn = document.querySelector(".my-prev-hook")
-console.log(bwdBtn);
+const bwdBtn = document.querySelector(".my-prev-hook").addEventListener("click", () => {
+  // Rimuovo la classe dalla immagine corrente 
+  carouselItem[activeImgIndex].classList.remove("active");
+
+  // Se l'indice dell'immagine è maggiore di 0
+  if (activeImgIndex > 0) {
+    // decremento l'indice
+    activeImgIndex--;
+    // altrimenti 
+  } else {
+    // riporto l'indice al valore dell' ultima immagine 
+    activeImgIndex = images.length - 1;
+  }
+  // assegno la classe active all'immagine tramite indice che decrementa
+  carouselItem[activeImgIndex].classList.add("active");
+
+})
+// console.log(bwdBtn);
